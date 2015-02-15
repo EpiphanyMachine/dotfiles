@@ -94,20 +94,24 @@
     log = true
 
 [diff]
-
-	# Detect copies as well as renames
-	renames = copies
+  	# Detect copies as well as renames
+  	renames = copies
 
 [help]
-
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+  	# Automatically correct and execute mistyped commands
+  	autocorrect = 1
 
 [push]
-	default = current
+  	default = current
+
+[pull]
+    default = current
+
+[user]
+    name = Gregory Hilkert
+    email = EpiphanyMachine@gmail.com
 
 # URL shorthands
-
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
@@ -120,12 +124,3 @@
     pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
-
-[user]
-    name = Gregory Hilkert
-    email = EpiphanyMachine@gmail.com
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
-[pull]
-    default = current

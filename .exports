@@ -1,5 +1,5 @@
 # Make vim the default editor
-export EDITOR="vim";
+export EDITOR="nano";
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768;
@@ -20,12 +20,3 @@ export MANPAGER="less -X";
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto";
-
-# Link Homebrew casks in `/Applications` rather than `~/Applications`
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# Docker Configuration
-export DOCKER_HOST=tcp://127.0.0.1:4243
-
-# PhantomJS env for testing in node
-export PHANTOMJS_BIN=./node_modules/phantomjs/bin/phantomjs
