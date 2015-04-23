@@ -40,12 +40,12 @@
     "debug"         : false,     // true: Allow debugger statements e.g. browser breakpoints.
     "eqnull"        : false,     // true: Tolerate use of `== null`
     "es5"           : false,     // true: Allow ES5 syntax (ex: getters and setters)
-    "esnext"        : false,     // true: Allow ES.next (ES6) syntax (ex: `const`)
+    "esnext"        : true,      // true: Allow ES.next (ES6) syntax (ex: `const`)
     "moz"           : false,     // true: Allow Mozilla specific syntax (extends and overrides esnext features)
                                  // (ex: `for each`, multiple try/catch, function expression…)
     "evil"          : false,     // true: Tolerate use of `eval` and `new Function()`
     "expr"          : false,     // true: Tolerate `ExpressionStatement` as Programs
-    "funcscope"     : false,     // true: Tolerate defining variables inside control statements"
+    "funcscope"     : false,     // true: Tolerate defining variables inside control statements
     "globalstrict"  : false,     // true: Allow global "use strict" (also enables 'strict')
     "iterator"      : false,     // true: Tolerate using the `__iterator__` property
     "lastsemic"     : false,     // true: Tolerate omitting a semicolon for the last statement of a 1-line block
