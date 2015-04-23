@@ -55,8 +55,8 @@
     # a line
     # whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
-    # Use nano as default editor
-    editor = "nano"
+    # Use sublime as default editor
+    editor = "vim"
 
     # Make `git rebase` safer on OS X
     # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -94,24 +94,20 @@
     log = true
 
 [diff]
-  	# Detect copies as well as renames
-  	renames = copies
+
+	# Detect copies as well as renames
+	renames = copies
 
 [help]
-  	# Automatically correct and execute mistyped commands
-  	autocorrect = 1
+
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
 
 [push]
-  	default = current
-
-[pull]
-    default = current
-
-[user]
-    name = Gregory Hilkert
-    email = EpiphanyMachine@gmail.com
+	default = current
 
 # URL shorthands
+
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
@@ -124,3 +120,12 @@
     pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
+
+[user]
+    name = Gregory Hilkert
+    email = EpiphanyMachine@gmail.com
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+[pull]
+    default = current
