@@ -1,11 +1,11 @@
-# Add locations to the `$PATH`
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/Cellar/ruby/2.1.1_1/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/awseb:$PATH"
 export PATH="$HOME/utils:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin"
-export NODE_PATH="$NODE_PATH:/Users/owner/.node/lib/node_modules"
-export ANDROID_HOME="/usr/local/opt/android-sdk"
+export PATH="$HOME/.rvm/bin:$PATH"
+
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
