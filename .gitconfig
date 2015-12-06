@@ -4,6 +4,7 @@
   c = commit
   a = add
   co = checkout
+  pr = pull-request
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
   # `git di $number` shows the diff between the state `$number` revisions ago and the current state
@@ -51,6 +52,10 @@
   # List contributors with number of commits
   contributors = shortlog --summary --numbered
 
+[commit]
+
+  gpgsign = true
+
 [apply]
 
   # Detect whitespace errors when applying a patch
@@ -59,13 +64,13 @@
 [core]
 
   # Use custom `.gitignore` and `.gitattributes`
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
 
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line
   # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+  # whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
   # Make `git rebase` safer on OS X
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -74,6 +79,8 @@
   # Prevent showing files whose names contain non-ASCII symbols as unversioned.
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
+
+	editor = vim
 
 [color]
 
@@ -109,6 +116,14 @@
   # Use `hexdump` to diff binary files
   textconv = hexdump -v -C
 
+[web]
+
+  browser = google-chrome
+
+[rerere]
+
+  enabled = 1
+
 [help]
 
   # Automatically correct and execute mistyped commands
@@ -121,12 +136,7 @@
 
 [push]
 
-  # Use the Git 1.x.x default to avoid errors on machines with old Git
-  # installations. To use `simple` instead, add this to your `~/.extra` file:
-  # `git config --global push.default simple`. See http://git.io/mMah-w.
-  default = matching
-  # Make `git push` push relevant annotated tags when pushing branches out.
-  followTags =
+  default = current
 
 [pull]
 
@@ -134,8 +144,8 @@
 
 [user]
 
-  name = Gregory Hilkert
-  email = EpiphanyMachine@gmail.com
+	name = Gregory Hilkert
+	email = EpiphanyMachine@gmail.com
 
 # URL shorthands
 
@@ -158,3 +168,10 @@
 [url "git://gist.github.com/"]
 
   insteadOf = "gist:"
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
