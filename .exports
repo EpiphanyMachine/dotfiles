@@ -1,28 +1,40 @@
-export EDITOR="vim"
-export NVM_DIR="~/.nvm"
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+#!/usr/bin/env bash
 
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
+export EDITOR="vim";
+export NVM_DIR="~/.nvm";
+export HOMEBREW_CASK_OPTS="--appdir=/Applications";
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history;
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768';
+# Use sloppy mode by default, matching web browsers.
+export NODE_REPL_MODE='sloppy';
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8';
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
 
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
 
-# Prefer US English and use UTF-8
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
 
 # timestamps for later analysis. www.debian-administration.org/users/rossen/weblog/1
 export HISTTIMEFORMAT='%F %T '
-
-# keep history up to date, across sessions, in realtime
-#  http://unix.stackexchange.com/a/48113
-export HISTCONTROL=ignoredups:erasedups         # no duplicate entries
-export HISTSIZE=100000                          # big big history (default is 500)
-export HISTFILESIZE=$HISTSIZE                   # big big history
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
