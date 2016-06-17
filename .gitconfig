@@ -2,7 +2,7 @@
 
   s = status -s
   c = commit
-  a = add
+  a = add -p
   co = checkout
   pr = pull-request
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -80,7 +80,8 @@
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
 
-	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+  editor = vim
 
 [color]
 
@@ -111,6 +112,8 @@
 
   # Detect copies as well as renames
   renames = copies
+  renamelimit = 0
+  compactionHeuristic = true
 
 [diff "bin"]
   # Use `hexdump` to diff binary files
@@ -146,6 +149,7 @@
 
 	name = Gregory Hilkert
 	email = EpiphanyMachine@gmail.com
+	signingkey = 42012521
 
 # URL shorthands
 
@@ -169,9 +173,12 @@
 
   insteadOf = "gist:"
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[interactive]
+
+  diffFilter = diff-so-fancy --patch-mode | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

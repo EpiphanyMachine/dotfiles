@@ -9,10 +9,10 @@ alias -- -="cd -"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
-alias api="cd ~/hint/hint-api"
-alias prov="cd ~/hint/provider-portal"
-alias mem="cd ~/hint/member-portal"
-alias emp="cd ~/hint/employer-portal"
+alias api="cd ~/projects/hint/hint-api"
+alias prov="cd ~/projects/hint/provider-portal"
+alias mem="cd ~/projects/hint/member-portal"
+alias emp="cd ~/projects/hint/employer-portal"
 alias g="git"
 alias h="history"
 alias j="jobs"
@@ -87,7 +87,7 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias emptytrash="sudo srm -rfv /Volumes/*/.Trashes; sudo srm -rfv ~/.Trash; sudo srm -rfv /private/var/log/asl/*.asl"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"

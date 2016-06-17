@@ -38,6 +38,7 @@ brew install homebrew/dupes/screen
 # git and more
 brew install hub
 brew install git
+brew install diff-so-fancy
 
 # gpg
 brew install gnupg2
