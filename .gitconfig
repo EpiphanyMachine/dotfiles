@@ -31,10 +31,10 @@
   reb = "!r() { git rebase -i HEAD~$1; }; r"
 
   # Remove the old tag with this name and tag the latest commit with it.
-	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+  retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
-	# Find branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
+  # Find branches containing commit
+  fb = "!f() { git branch -a --contains $1; }; f"
 
   # Find tags containing commit
   ft = "!f() { git describe --always --contains $1; }; f"
@@ -56,22 +56,6 @@
 
   gpgsign = true
 
-	# Merge GitHub pull request on top of the current branch or,
-	# if a branch name is specified, on top of the specified branch
-	mpr = "!f() { \
-		declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
-		declare branch=\"${2:-$currentBranch}\"; \
-		if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-			git fetch origin refs/pull/$1/head:pr/$1 && \
-			git checkout -B $branch && \
-			git rebase $branch pr/$1 && \
-			git checkout -B $branch && \
-			git merge pr/$1 && \
-			git branch -D pr/$1 && \
-			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
-		fi \
-	}; f"
-
 [apply]
 
   # Detect whitespace errors when applying a patch
@@ -80,7 +64,7 @@
 [core]
 
   # Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
 
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -96,7 +80,7 @@
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
 
-	pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+  pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
   editor = vim
 
 [color]
@@ -164,11 +148,11 @@
 
 [user]
 
-	name = Gregory Hilkert
-	email = EpiphanyMachine@gmail.com
-	signingkey = 42012521
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+  name = Gregory Hilkert
+  email = EpiphanyMachine@gmail.com
+  signingkey = 42012521
+  # Make `git push` push relevant annotated tags when pushing branches out.
+  followTags = true
 
 # URL shorthands
 
@@ -197,7 +181,8 @@
   diffFilter = diff-so-fancy --patch-mode | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
