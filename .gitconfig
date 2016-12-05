@@ -64,7 +64,7 @@
 [core]
 
   # Use custom `.gitignore` and `.gitattributes`
-	excludesfile = /Users/em/.gitignore
+	excludesfile = /Users/greg/.gitignore
   attributesfile = ~/.gitattributes
 
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
