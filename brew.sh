@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 # Non-HB things
-# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
-# \curl -sSL https://get.rvm.io | bash -s stable --ruby
+# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+# \curl -sSL https://get.rvm.io | bash -s stable
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install command-line tools using Homebrew.
 
