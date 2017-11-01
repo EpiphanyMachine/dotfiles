@@ -6,7 +6,7 @@
 
 ########## Variables
 
-dir=~/.dotfiles                   # dotfiles directory
+dir=~/projects/dotfiles           # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="aliases bash_profile bash_prompt bashrc editorconfig exports functions gitconfig gitignore jshintrc npmrc path git-completion.sh slate.js"  # list of files/folders to symlink in homedir
 
