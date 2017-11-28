@@ -8,7 +8,7 @@
 
 dir=~/projects/dotfiles           # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="aliases bash_profile bash_prompt bashrc editorconfig exports functions gitconfig jshintrc rubyrc rubocop.yml npmrc path git-completion.sh"  # list of files/folders to symlink in homedir
+files="aliases bash_profile bash_prompt bashrc editorconfig exports functions gitconfig jshintrc rubyrc rubocop.yml npmrc path git-completion.bash"  # list of files/folders to symlink in homedir
 
 ##########
 
