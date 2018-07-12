@@ -56,9 +56,10 @@ if [ -f ~/.git-completion.bash ]; then
   __git_complete g __git_main
 fi
 
-# NVM and RVM hookins
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# NVM and RVM hookins & rbenv
+source $(brew --prefix nvm)/nvm.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+eval "$(rbenv init -)"
 
 # iTerm2 Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
