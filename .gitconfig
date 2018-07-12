@@ -56,6 +56,10 @@
 
   gpgsign = true
 
+[gpg]
+
+  program = /usr/local/MacGPG2/bin/gpg2
+
 [apply]
 
   # Detect whitespace errors when applying a patch

@@ -3,6 +3,7 @@
 export EDITOR="code";
 export NVM_DIR="$HOME/.nvm";
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
+export HOMEBREW_HOME="$HOME/.homebrew";
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY="$HOME/.node_history";
