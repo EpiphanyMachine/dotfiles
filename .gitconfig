@@ -84,7 +84,7 @@
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
 
-  pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = diff-so-fancy | less --tabs=4 -RFX
   editor = vim
 
 [color]
@@ -101,11 +101,11 @@
 
 [color "diff"]
 
-	meta = 227
+	meta = yellow
 	frag = magenta bold
 	old = red bold
 	new = green bold
-	commit = 227 bold
+	commit = yellow bold
 	whitespace = red reverse
 
 [color "status"]
@@ -192,3 +192,7 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
+[diff-so-fancy]
+
+	markEmptyLines = false
